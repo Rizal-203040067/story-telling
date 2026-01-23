@@ -8,7 +8,7 @@ export default function App() {
   return (
     <main
       ref={scrollRef}
-      className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth"
+      className="h-screen overflow-y-scroll snap-y snap-proximity scroll-smooth"
       style={{ WebkitOverflowScrolling: "touch" }}>
       {scenes.map((scene, index) => (
         <StoryScene key={index} scene={scene} scroller={scrollRef} />
