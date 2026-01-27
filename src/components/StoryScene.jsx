@@ -26,9 +26,9 @@ export default function StoryScene({ scene, scroller }) {
             scroller: scroller.current,
             start: "top bottom",
             end: "bottom top",
-            scrub: 0.6,
+            scrub: 0.1,
           },
-        }
+        },
       );
 
       // 💕 Image parallax
@@ -46,7 +46,7 @@ export default function StoryScene({ scene, scroller }) {
             end: "bottom 20%",
             scrub: 0.6,
           },
-        }
+        },
       );
 
       // 💌 Romantic word-by-word reveal
@@ -66,7 +66,7 @@ export default function StoryScene({ scene, scroller }) {
             end: "center center",
             scrub: 0.6,
           },
-        }
+        },
       );
     }, sectionRef);
 
