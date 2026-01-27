@@ -26,7 +26,7 @@ export default function StoryScene({ scene, scroller }) {
             scroller: scroller.current,
             start: "top bottom",
             end: "bottom top",
-            scrub: 0.1,
+            scrub: 0.6,
           },
         },
       );
