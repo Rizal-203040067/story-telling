@@ -43,7 +43,7 @@ export const scenes = [
     bg: "#f472b6",
   },
   {
-    text: "Aku sangat khawatir terburu-buru dan justru berakhir nyakitin kamu",
+    text: "Aku khawatir terburu-buru dan justru berakhir nyakitin kamu",
     image: "https://tenor.com/view/emote-gif-24455712.gif", // quiet rain
     bg: "#f472b6",
   },
