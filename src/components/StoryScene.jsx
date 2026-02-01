@@ -84,22 +84,8 @@ export default function StoryScene({ scene, scroller }) {
         style={{ backgroundColor: scene.bg }}
       />
 
-      <div className="absolute inset-0 -z-10 blur-3xl rounded-full bg-white/40">
-        {[...Array(6)].map((_, i) => (
-          <span
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-white/20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${8 + i * 2}s ease-in-out infinite`,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-4 px-6">
+      <div className="relative z-10 flex flex-col items-center gap-6 px-6">
         <img
           ref={imageRef}
           src={scene.image}
