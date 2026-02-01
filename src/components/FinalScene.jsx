@@ -14,7 +14,7 @@ export default function FinalScene() {
 
       {/* content */}
       <div className="relative z-10 max-w-md px-6 text-center text-white animate-fadeIn">
-        <h1 className="text-3xl font-light leading-snug mb-6">
+        <h1 className="text-3xl font-normal leading-snug mb-6">
           Bahagia Selalu beby...
         </h1>
 
