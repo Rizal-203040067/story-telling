@@ -19,7 +19,7 @@ export default function FinalScene() {
         </h1>
 
         <h2 className="text-3xl font-light leading-snug mb-6">
-          Aku ga akan pernah lupain kamu.
+          Kalau kamu butuh temen curhat, aku selalu ada kok buat kamu.
         </h2>
       </div>
     </section>
