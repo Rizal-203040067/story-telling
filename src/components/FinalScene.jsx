@@ -18,7 +18,7 @@ export default function FinalScene() {
           Bahagia Selalu beby...
         </h1>
 
-        <h2 className="text-3xl font-light leading-snug mb-6">
+        <h2 className="text-xl font-light leading-snug mb-6">
           Kalau kamu butuh temen curhat, aku selalu ada kok buat kamu.
         </h2>
       </div>
