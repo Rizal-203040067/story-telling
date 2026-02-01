@@ -1,4 +1,4 @@
-import finalBg from "../assets/final-bg.jpeg";
+import finalBg from "../assets/final-bg.png";
 
 export default function FinalScene() {
   return (
