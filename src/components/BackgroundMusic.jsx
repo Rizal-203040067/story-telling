@@ -4,8 +4,10 @@ import music from "../assets/music.mp3";
 const BackgroundMusic = forwardRef((_, ref) => {
   const audioRef = useRef(null);
 
+  // expose mute toggle ke parent
   useImperativeHandle(ref, () => ({
     toggleMute() {
+      if (!audioRef.current) return true;
       audioRef.current.muted = !audioRef.current.muted;
       return audioRef.current.muted;
     },
@@ -13,18 +15,18 @@ const BackgroundMusic = forwardRef((_, ref) => {
 
   useEffect(() => {
     const startMusic = () => {
-      const audio = audioRef.current;
-      if (!audio) return;
+      if (!audioRef.current) return;
 
-      audio.volume = 0.4;
-      audio.muted = false;
-      audio.play().catch(() => {});
+      audioRef.current.play().catch(() => {
+        // silently fail (normal on some browsers)
+      });
 
       window.removeEventListener("click", startMusic);
       window.removeEventListener("touchstart", startMusic);
       window.removeEventListener("scroll", startMusic);
     };
 
+    // first user interaction triggers audio
     window.addEventListener("click", startMusic, { once: true });
     window.addEventListener("touchstart", startMusic, { once: true });
     window.addEventListener("scroll", startMusic, { once: true });
