@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function StoryScene({ scene, scroller }) {
+export default function StoryScene({ scene, scroller, index }) {
   const sectionRef = useRef(null);
   const bgRef = useRef(null);
   const imageRef = useRef(null);
@@ -77,6 +77,13 @@ export default function StoryScene({ scene, scroller }) {
     <section
       ref={sectionRef}
       className="relative h-screen snap-start overflow-hidden flex items-center justify-center">
+      {/* TAP TO START (ONLY FIRST SCENE) */}
+      {index === 0 && (
+        <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/30 text-white text-sm animate-pulse pointer-events-none">
+          Tap layar 💗
+        </div>
+      )}
+
       {/* Background */}
       <div
         ref={bgRef}
