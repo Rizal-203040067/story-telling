@@ -1,4 +1,4 @@
-import { useEffect, forwardRef, useImperativeHandle, useRef } from "react";
+import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import music from "../assets/music.mp3";
 
 const BackgroundMusic = forwardRef((_, ref) => {
@@ -13,18 +13,26 @@ const BackgroundMusic = forwardRef((_, ref) => {
 
   useEffect(() => {
     const startMusic = () => {
-      audioRef.current.volume = 0.4;
-      audioRef.current.play().catch(() => {});
+      const audio = audioRef.current;
+      if (!audio) return;
+
+      audio.volume = 0.4;
+      audio.muted = false;
+      audio.play().catch(() => {});
+
       window.removeEventListener("click", startMusic);
       window.removeEventListener("touchstart", startMusic);
+      window.removeEventListener("scroll", startMusic);
     };
 
-    window.addEventListener("click", startMusic);
-    window.addEventListener("touchstart", startMusic);
+    window.addEventListener("click", startMusic, { once: true });
+    window.addEventListener("touchstart", startMusic, { once: true });
+    window.addEventListener("scroll", startMusic, { once: true });
 
     return () => {
       window.removeEventListener("click", startMusic);
       window.removeEventListener("touchstart", startMusic);
+      window.removeEventListener("scroll", startMusic);
     };
   }, []);
 
